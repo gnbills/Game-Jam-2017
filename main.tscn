@@ -1,0 +1,325 @@
+[gd_scene load_steps=7 format=1]
+
+[ext_resource path="res://main.gd" type="Script" id=1]
+[ext_resource path="res://Sky_TileSet.tres" type="TileSet" id=2]
+[ext_resource path="res://TileSet.tres" type="TileSet" id=3]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Coin.tscn" type="PackedScene" id=5]
+[ext_resource path="res://EndGoal.tscn" type="PackedScene" id=6]
+
+[node name="Node2D" type="Node2D"]
+
+script/script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sky" type="TileMap" parent="."]
+
+z/z = -7
+mode = 0
+tile_set = ExtResource( 2 )
+cell/size = Vector2( 64, 64 )
+cell/quadrant_size = 16
+cell/custom_transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+cell/half_offset = 2
+cell/tile_origin = 0
+cell/y_sort = false
+collision/use_kinematic = false
+collision/friction = 1.0
+collision/bounce = 0.0
+collision/layers = 1
+collision/mask = 1
+occluder/light_mask = 1
+tile_data = IntArray( -1834935, 0, -1769450, 0, -1769437, 0, -1769428, 0, -1769407, 0, -1703921, 1, -1703855, 0, -1507299, 0, -1507266, 0, -1441711, 0, -1310707, 0, -1310706, 0, -1310680, 0, -1245128, 0, -1114118, 0, -1114107, 0, -1114106, 0, -1048570, 0, -1048569, 0, -982984, 0, -851942, 0, -851928, 0, -786420, 0, -720883, 0, -720817, 0, -589837, 0, -655354, 0, -655313, 0, -655312, 0, -655287, 0, -524292, 0, -589804, 0, -589803, 0, -458747, 0, -458714, 0, -393203, 0, -393137, 0, -327634, 0, -262125, 0, -262058, 0, -196522, 0, 27, 0, 35, 0, 131058, 0, 131062, 0, 65548, 0, 65554, 0, 131073, 0, 131119, 0, 131142, 0, 262143, 0, 196614, 0, 262177, 0, 327706, 0, 327723, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Ground" type="TileMap" parent="."]
+
+mode = 0
+tile_set = ExtResource( 3 )
+cell/size = Vector2( 64, 64 )
+cell/quadrant_size = 16
+cell/custom_transform = Matrix32( 1, 0, 0, 1, 0, 0 )
+cell/half_offset = 2
+cell/tile_origin = 0
+cell/y_sort = false
+collision/use_kinematic = false
+collision/friction = 1.0
+collision/bounce = 0.0
+collision/layers = 1
+collision/mask = 1
+occluder/light_mask = 1
+tile_data = IntArray( -1245153, 0, -1245152, 0, -1245151, 0, -1245150, 0, -1245149, 0, -1245148, 2, -1245142, 3, -1245141, 0, -1245140, 0, -1245139, 0, -1245138, 0, -1245137, 0, -1179600, 0, -1179578, 0, -1179577, 0, -1179576, 0, -1179575, 0, -1179574, 0, -1179573, 0, -1179572, 0, -1179571, 0, -1179570, 0, -1179569, 0, -1179568, 0, -1179567, 0, -1179566, 0, -1179565, 0, -1179564, 0, -1179563, 0, -1179562, 0, -1179561, 0, -1179560, 0, -1114063, 0, -1048526, 0, -1048509, 0, -983020, 0, -983019, 0, -983018, 0, -982989, 0, -982974, 0, -917452, 0, -917439, 0, -851915, 0, -851904, 0, -786378, 0, -786377, 0, -786376, 0, -786375, 0, -786374, 0, -786373, 0, -786372, 0, -786371, 0, -720834, 0, -655297, 0, -589760, 0, -393157, 0, -393156, 0, -393155, 0, -393154, 0, -393153, 0, -393152, 0, -393151, 0, -393150, 0, -327622, 0, -196580, 0, -196579, 0, -196578, 0, -196577, 0, -196576, 0, -196575, 0, -196574, 0, -196573, 0, -196572, 0, -196571, 0, -196570, 0, -196555, 0, -196554, 0, -196553, 0, -196552, 0, -131033, 0, -131026, 0, -131025, 0, -131024, 0, -131023, 0, -131020, 0, -131005, 0, -131004, 0, -131003, 0, -131002, 0, -131001, 0, -131000, 0, -130999, 0, -130997, 0, -65496, 0, -65470, 0, 41, 0, 65, 0, 66, 1, 65578, 0, 65588, 2, 65589, 3, 65590, 1, 65591, 0, 65592, 0, 65593, 0, 65594, 0, 65595, 0, 65596, 0, 65597, 0, 65598, 0, 65599, 0, 65600, 0, 65601, 1, 65602, 1, 65615, 0, 65618, 0, 65620, 0, 65622, 0, 65624, 0, 65625, 0, 65626, 0, 65627, 0, 65628, 0, 65629, 0, 65630, 0, 131123, 2, 196633, 0, 196634, 0, 196635, 0, 196636, 0, 196637, 0, 196638, 0, 196643, 0, 196644, 0, 196645, 0, 196646, 0, 196647, 0, 196648, 0, 196649, 0, 196650, 0, 196651, 0, 196658, 2, 262193, 2, 327728, 2, 458744, 0, 393216, 0, 393217, 0, 393218, 0, 393219, 0, 393220, 0, 393222, 0, 393223, 0, 393226, 0, 393227, 2, 393230, 536870914, 393231, 536870912, 393232, 536870912, 393233, 536870912, 393234, 536870912, 393235, 536870912, 393236, 0, 393237, 0, 393238, 0, 393239, 0, 393241, 0, 393242, 0, 393243, 0, 393244, 0, 393245, 0, 393246, 0, 393248, 0, 393249, 0, 393250, 0, 393252, 0, 393254, 0, 393256, 0, 393258, 0, 393259, 0, 393260, 0, 393261, 0, 393262, 0, 393263, 0, 524268, 6, 524269, 6, 524270, 6, 524271, 6, 524272, 6, 524273, 6, 524274, 6, 524275, 6, 524276, 6, 524277, 6, 524278, 6, 524279, 6, 524280, 7, 524281, 6, 524282, 6, 524283, 6, 524284, 6, 524285, 6, 524286, 6, 524287, 6, 458752, 7, 458753, 7, 458754, 7, 458755, 7, 458756, 7, 458757, 6, 458758, 7, 458759, 7, 458760, 6, 458761, 6, 458762, 7, 458763, 6, 458764, 6, 458765, 6, 458766, 6, 458767, 7, 458768, 7, 458769, 7, 458770, 7, 458771, 7, 458772, 7, 458773, 7, 458774, 7, 458775, 7, 458776, 6, 458777, 7, 458778, 7, 458779, 7, 458780, 7, 458781, 7, 458782, 7, 458783, 6, 458784, 7, 458785, 7, 458786, 7, 458787, 6, 458788, 7, 458789, 6, 458790, 7, 458791, 6, 458792, 7, 458793, 6, 458794, 7, 458795, 7, 458796, 7, 458797, 7, 458798, 7, 458799, 7, 458800, 6, 458801, 6, 458802, 6, 458803, 6, 458804, 6, 458805, 6, 458806, 6, 458807, 6, 458808, 6, 458809, 6, 458810, 6, 458811, 6, 458812, 6, 458813, 6, 458814, 6, 458815, 6, 458816, 6, 458817, 6, 458818, 6, 458819, 6, 458820, 6, 458821, 6, 458822, 6, 458823, 6, 458824, 6, 458825, 6, 458826, 6, 458827, 6, 458828, 6, 458829, 6, 458830, 6, 458831, 6, 458832, 6, 458833, 6, 458834, 6, 458835, 6, 458836, 6, 458837, 6, 458838, 6, 458839, 6, 458840, 6, 458841, 6, 458842, 6, 458843, 6, 458844, 6, 458845, 6, 458846, 6, 458847, 6, 458848, 6, 458849, 6, 458850, 6, 458851, 6, 458852, 6, 458853, 6, 458854, 6, 458855, 6, 458856, 6, 458857, 6, 458858, 6, 458859, 6, 458860, 6, 458861, 6, 458862, 6, 458863, 6, 458864, 6, 458865, 6, 458866, 6, 458867, 6, 458868, 6, 458869, 6, 458870, 6, 458871, 6, 458872, 6, 458873, 6, 589804, 8, 589805, 8, 589806, 8, 589807, 8, 589808, 8, 589809, 8, 589810, 8, 589811, 8, 589812, 8, 589813, 8, 589814, 8, 589815, 8, 589816, 8, 589817, 8, 589818, 8, 589819, 8, 589820, 8, 589821, 8, 589822, 8, 589823, 8, 524288, 8, 524289, 8, 524290, 8, 524291, 8, 524292, 8, 524293, 8, 524294, 8, 524295, 8, 524296, 8, 524297, 8, 524298, 8, 524299, 8, 524300, 8, 524301, 8, 524302, 8, 524303, 8, 524304, 8, 524305, 8, 524306, 8, 524307, 8, 524308, 8, 524309, 8, 524310, 8, 524311, 8, 524312, 8, 524313, 8, 524314, 8, 524315, 8, 524316, 8, 524317, 8, 524318, 8, 524319, 8, 524320, 8, 524321, 8, 524322, 8, 524323, 8, 524324, 8, 524325, 8, 524326, 8, 524327, 8, 524328, 8, 524329, 8, 524330, 8, 524331, 8, 524332, 8, 524333, 8, 524334, 8, 524335, 8, 524336, 8, 524337, 8, 524338, 8, 524339, 8, 524340, 8, 524341, 8, 524342, 8, 524343, 8, 524344, 8, 524345, 8, 524346, 8, 524347, 8, 524348, 8, 524349, 8, 524350, 8, 524351, 8, 524352, 8, 524353, 8, 524354, 8, 524355, 8, 524356, 8, 524357, 8, 524358, 8, 524359, 8, 524360, 8, 524361, 8, 524362, 8, 524363, 8, 524364, 8, 524365, 8, 524366, 8, 524367, 8, 524368, 8, 524369, 8, 524370, 8, 524371, 8, 524372, 8, 524373, 8, 524374, 8, 524375, 8, 524376, 8, 524377, 8, 524378, 8, 524379, 8, 524380, 8, 524381, 8, 524382, 8, 524383, 8, 524384, 8, 524385, 8, 524386, 8, 524387, 8, 524388, 8, 524389, 8, 524390, 8, 524391, 8, 524392, 8, 524393, 8, 524394, 8, 524395, 8, 524396, 8, 524397, 8, 524398, 8, 524399, 8, 524400, 8, 524401, 8, 524402, 8, 524403, 8, 524404, 8, 524405, 8, 524406, 8, 524407, 8, 524408, 8, 524409, 8, 655340, 5, 655341, 5, 655342, 5, 655343, 5, 655344, 5, 655345, 5, 655346, 5, 655347, 5, 655348, 5, 655349, 5, 655350, 5, 655351, 5, 655352, 5, 655353, 5, 655354, 5, 655355, 5, 655356, 5, 655357, 5, 655358, 5, 655359, 5, 589824, 5, 589825, 5, 589826, 5, 589827, 5, 589828, 5, 589829, 5, 589830, 5, 589831, 5, 589832, 5, 589833, 5, 589834, 5, 589835, 5, 589836, 5, 589837, 5, 589838, 5, 589839, 5, 589840, 5, 589841, 5, 589842, 5, 589843, 5, 589844, 5, 589845, 5, 589846, 5, 589847, 5, 589848, 5, 589849, 5, 589850, 5, 589851, 5, 589852, 5, 589853, 5, 589854, 5, 589855, 5, 589856, 5, 589857, 5, 589858, 5, 589859, 5, 589860, 5, 589861, 5, 589862, 5, 589863, 5, 589864, 5, 589865, 5, 589866, 5, 589867, 5, 589868, 5, 589869, 5, 589870, 5, 589871, 5, 589872, 5, 589873, 5, 589874, 5, 589875, 5, 589876, 5, 589877, 5, 589878, 5, 589879, 5, 589880, 5, 589881, 5, 589882, 5, 589883, 5, 589884, 5, 589885, 5, 589886, 5, 589887, 5, 589888, 5, 589889, 5, 589890, 5, 589891, 5, 589892, 5, 589893, 5, 589894, 5, 589895, 5, 589896, 5, 589897, 5, 589898, 5, 589899, 5, 589900, 5, 589901, 5, 589902, 5, 589903, 5, 589904, 5, 589905, 5, 589906, 5, 589907, 5, 589908, 5, 589909, 5, 589910, 5, 589911, 5, 589912, 5, 589913, 5, 589914, 5, 589915, 5, 589916, 5, 589917, 5, 589918, 5, 589919, 5, 589920, 5, 589921, 5, 589922, 5, 589923, 5, 589924, 5, 589925, 5, 589926, 5, 589927, 5, 589928, 5, 589929, 5, 589930, 5, 589931, 5, 589932, 5, 589933, 5, 589934, 5, 589935, 5, 589936, 5, 589937, 5, 589938, 5, 589939, 5, 589940, 5, 589941, 5, 589942, 5, 589943, 5, 589944, 5, 589945, 5, 720876, 5, 720877, 5, 720878, 5, 720879, 5, 720880, 5, 720881, 5, 720882, 5, 720883, 5, 720884, 5, 720885, 5, 720886, 5, 720887, 5, 720888, 5, 720889, 5, 720890, 5, 720891, 5, 720892, 5, 720893, 5, 720894, 5, 720895, 5, 655360, 5, 655361, 5, 655362, 5, 655363, 5, 655364, 5, 655365, 5, 655366, 5, 655367, 5, 655368, 5, 655369, 5, 655370, 5, 655371, 5, 655372, 5, 655373, 5, 655374, 5, 655375, 5, 655376, 5, 655377, 5, 655378, 5, 655379, 5, 655380, 5, 655381, 5, 655382, 5, 655383, 5, 655384, 5, 655385, 5, 655386, 5, 655387, 5, 655388, 5, 655389, 5, 655390, 5, 655391, 5, 655392, 5, 655393, 5, 655394, 5, 655395, 5, 655396, 5, 655397, 5, 655398, 5, 655399, 5, 655400, 5, 655401, 5, 655402, 5, 655403, 5, 655404, 5, 655405, 5, 655406, 5, 655407, 5, 655408, 5, 655409, 5, 655410, 5, 655411, 5, 655412, 5, 655413, 5, 655414, 5, 655415, 5, 655416, 5, 655417, 5, 655418, 5, 655419, 5, 655420, 5, 655421, 5, 655422, 5, 655423, 5, 655424, 5, 655425, 5, 655426, 5, 655427, 5, 655428, 5, 655429, 5, 655430, 5, 655431, 5, 655432, 5, 655433, 5, 655434, 5, 655435, 5, 655436, 5, 655437, 5, 655438, 5, 655439, 5, 655440, 5, 655441, 5, 655442, 5, 655443, 5, 655444, 5, 655445, 5, 655446, 5, 655447, 5, 655448, 5, 655449, 5, 655450, 5, 655451, 5, 655452, 5, 655453, 5, 655454, 5, 655455, 5, 655456, 5, 655457, 5, 655458, 5, 655459, 5, 655460, 5, 655461, 5, 655462, 5, 655463, 5, 655464, 5, 655465, 5, 655466, 5, 655467, 5, 655468, 5, 655469, 5, 655470, 5, 655471, 5, 655472, 5, 655473, 5, 655474, 5, 655475, 5, 655476, 5, 655477, 5, 655478, 5, 655479, 5, 655480, 5, 655481, 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+
+editor/display_folded = true
+transform/pos = Vector2( 200, 290 )
+z/z = -3
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit/left = -10000000
+limit/top = -10000000
+limit/right = 10000000
+limit/bottom = 10000000
+drag_margin/h_enabled = true
+drag_margin/v_enabled = true
+smoothing/enable = false
+smoothing/speed = 5.0
+drag_margin/left = 0.2
+drag_margin/top = 0.2
+drag_margin/right = 0.2
+drag_margin/bottom = 0.2
+
+[node name="Coin 2 2" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 2860, -650 )
+
+[node name="Coin 5" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 2780, -510 )
+
+[node name="Coin 3" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 120, 10 )
+
+[node name="Coin" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( -210, -40 )
+
+[node name="Coin 2" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( -70, 0 )
+
+[node name="Coin 4" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 1070, 0 )
+
+[node name="Coin7" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 1330, 0 )
+
+[node name="Coin8" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 1220, 0 )
+
+[node name="Coin9" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 1150, 0 )
+
+[node name="Coin11" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 1540, -600 )
+
+[node name="Coin12" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 1450, -600 )
+
+[node name="Coin13" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 1370, -610 )
+
+[node name="Coin14" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 1310, -590 )
+
+[node name="Coin15" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 1500, -1660 )
+
+[node name="Coin16" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 1970, -1650 )
+
+[node name="Coin17" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 2370, -1660 )
+
+[node name="Coin18" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 2810, -1310 )
+
+[node name="Coin19" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 3150, -1180 )
+
+[node name="Coin20" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 3450, -790 )
+
+[node name="Coin21" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 3160, -370 )
+
+[node name="Coin22" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 3480, -360 )
+
+[node name="Coin23" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 3970, -550 )
+
+[node name="Coin24" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 4620, -350 )
+
+[node name="Coin25" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( -780, -10 )
+
+[node name="Flag1" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 5980, -150 )
+
+[node name="Flag 2" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( 1370, -1160 )
+
+[node name="Flag3" parent="." instance=ExtResource( 6 )]
+
+transform/pos = Vector2( -520, 180 )
+
+[node name="Label" type="Label" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 70.0
+margin/top = 180.0
+margin/right = 220.0
+margin/bottom = 200.0
+text = "Don't Grab the Coins! "
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Label1" type="Label" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 180.0
+margin/top = 200.0
+margin/right = 330.0
+margin/bottom = 220.0
+text = "Press D = Right"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Label2" type="Label" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 70.0
+margin/top = 200.0
+margin/right = 220.0
+margin/bottom = 220.0
+text = "Press A = Left"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Label3" type="Label" parent="."]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 110.0
+margin/top = 220.0
+margin/right = 260.0
+margin/bottom = 240.0
+text = "Press W = Jump"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="Coin 6" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 1140, -200 )
+
+[node name="Coin 7" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 1210, -190 )
+
+[node name="Coin 8" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 1310, -190 )
+
+[node name="Coin 9" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 1540, -80 )
+
+[node name="Coin 10" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 4230, -1590 )
+
+[node name="Coin 11" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 4230, -1690 )
+
+[node name="Coin 12" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 4230, -1810 )
+
+[node name="Coin 13" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 4230, -1940 )
+
+[node name="Coin 14" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 4330, -1750 )
+
+[node name="Coin 15" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 4450, -1750 )
+
+[node name="Coin 16" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 4530, -1580 )
+
+[node name="Coin 17" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 4530, -1690 )
+
+[node name="Coin 18" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 4540, -1830 )
+
+[node name="Coin 19" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 4540, -1950 )
+
+[node name="Coin 20" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 4800, -1590 )
+
+[node name="Coin 21" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 4790, -1710 )
+
+[node name="Coin 22" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 4780, -1820 )
+
+[node name="Coin 23" parent="." instance=ExtResource( 5 )]
+
+transform/pos = Vector2( 4780, -2100 )
+
+
